@@ -5,11 +5,12 @@ import { getAllHolidays } from '@/services/holidays';
  * Hook for fetching public holidays for Sri Lanka for a specific year
  * @param year - The year to fetch holidays for
  */
-export const useHolidaysByCountry = (year: number) => {
+export const useHolidaysOfSL = (year: number) => {
   return useQuery({
     queryKey: ['holidays', year],
     queryFn: () => getAllHolidays(year),
     enabled: !!year,
-    staleTime: 1000 * 60 * 60 * 24,
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
   });
 };
