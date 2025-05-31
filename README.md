@@ -1,7 +1,6 @@
-![Solo Project](https://img.shields.io/badge/project-solo-blue.svg)
-> 🚫 **Solo Project** – I’m not accepting contributions at this time.
+Based on [Holiday-Optimizer](https://github.com/waqarkalim/holiday-optimizer)
 
-# Holiday Optimizer
+# Srilankan Holiday Optimizer
 
 A web application for optimizing Paid Time Off (PTO) usage.
 
@@ -113,9 +112,8 @@ pnpm format
 
 ## Contribution
 
-Thank you for your interest! This repository is maintained solely by me.  
-I’m not accepting pull requests or forks.  
-If you’d like to support the project, feel free to ⭐ the repo.
+See some shit? or wants to add some shit?
+PR!
 
 ## License
 
