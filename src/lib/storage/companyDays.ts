@@ -5,7 +5,6 @@ interface CompanyDay {
   name: string;
 }
 
-// Helper function to get the year-specific storage key
 const getYearStorageKey = (year: number): string => `${STORAGE_KEY_BASE}_${year}`;
 
 export function getStoredCompanyDays(year: number = new Date().getFullYear()): CompanyDay[] {

@@ -13,7 +13,7 @@ export function DaysInputStep() {
   // Using the new StepTitleWithInfo component
   const titleWithInfo = (
     <StepTitleWithInfo
-      title="Enter Your Days"
+      title="Enter Your PTO Days"
       colorScheme="teal"
       badge={{ label: "Required" }}
       tooltip={{

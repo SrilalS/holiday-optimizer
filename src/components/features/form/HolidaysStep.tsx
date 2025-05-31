@@ -5,7 +5,7 @@ import { useHolidays } from '@/hooks/useOptimizer';
 import { StepTitleWithInfo } from './components/StepTitleWithInfo';
 import { useOptimizer } from '@/contexts/OptimizerContext';
 import { useEffect, useReducer } from 'react';
-import { useCountries, useHolidaysByCountry, useRegions, useStates } from '@/hooks/useHolidayQueries';
+import { useHolidaysByCountry } from '@/hooks/useHolidayQueries';
 import { CountryInfo, getStoredLocationData, storeLocationData } from '@/lib/storage/location';
 import { convertToDateObject } from '@/utils/dates';
 import { format } from 'date-fns';
@@ -41,24 +41,6 @@ const holidaysReducer = (state: HolidaysState, action: HolidaysAction): Holidays
         selectedState: action.payload.state!,
         selectedRegion: action.payload.region!,
       };
-    case 'SET_COUNTRY':
-      return {
-        ...state,
-        selectedCountryCode: action.payload,
-        selectedState: '',
-        selectedRegion: '',
-      };
-    case 'SET_STATE':
-      return {
-        ...state,
-        selectedState: action.payload,
-        selectedRegion: '',
-      };
-    case 'SET_REGION':
-      return {
-        ...state,
-        selectedRegion: action.payload,
-      };
     case 'RESET_SELECTIONS':
       return initialState;
     default:
@@ -72,10 +54,6 @@ export const HolidaysStep = () => {
 
   const [holidaysState, dispatch] = useReducer(holidaysReducer, initialState);
   const { selectedCountryCode, selectedState, selectedRegion } = holidaysState;
-
-  const { data: countries = [] } = useCountries();
-  const { data: states = [] } = useStates(selectedCountryCode);
-  const { data: regions = [] } = useRegions(selectedCountryCode, selectedState);
 
   const { data: holidaysData, refetch } = useHolidaysByCountry(selectedYear, {
     country: selectedCountryCode,
