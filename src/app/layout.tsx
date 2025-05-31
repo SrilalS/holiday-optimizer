@@ -128,8 +128,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
         ]}
         totalTime="PT5M"
-      />
-      <BreadcrumbJsonLd
+      />      <BreadcrumbJsonLd
         items={[
           {
             name: "Holiday Optimizer",
@@ -138,10 +137,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {
             name: "PTO Optimization Tool",
             url: `${baseUrl}/`
-          },
-          {
-            name: "How Holiday Optimizer Works",
-            url: `${baseUrl}/how-it-works`
           }
         ]}
       />
