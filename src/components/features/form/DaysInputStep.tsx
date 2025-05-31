@@ -25,7 +25,8 @@ export function DaysInputStep() {
   );
 
   const inputClasses = cn(
-    'max-w-[160px] h-9',
+    'h-9', // Removed 'max-w-[160px]'
+    'w-full', // Added 'w-full' to make it take full width
     'bg-white dark:bg-gray-900',
     'border-teal-200 dark:border-teal-800',
     'focus:border-teal-400 dark:focus:border-teal-600',
@@ -40,16 +41,11 @@ export function DaysInputStep() {
       <StepHeader
         number={1}
         title={titleWithInfo}
-        description="Enter how many paid time off days you have available. The app will optimize their use from today through the end of the year."
         colorScheme="teal"
         id="days-heading"
       />
       <fieldset className="pt-1 border-0 m-0 p-0" aria-labelledby="days-heading">
         <legend className="sr-only">Number of paid time off days</legend>
-        <label htmlFor="days" className="block text-sm font-medium text-teal-700 dark:text-teal-300 mb-1">
-          Number of days
-          <span className="sr-only">(numeric input field)</span>
-        </label>
         <Input
           autoFocus
           id="days"
@@ -59,7 +55,6 @@ export function DaysInputStep() {
           pattern="[0-9]*"
           maxLength={3}
           min={1}
-          max={365}
           value={days}
           onChange={handleChange}
           className={inputClasses}
@@ -76,4 +71,4 @@ export function DaysInputStep() {
       </fieldset>
     </FormSection>
   );
-} 
+}
