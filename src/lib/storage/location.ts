@@ -1,12 +1,12 @@
-// export interface CountryInfo {
-//   country: string;
-//   state?: string;
-//   region?: string;
-// }
+export interface CountryInfo {
+  countryCode: string;
+  state?: string;
+  region?: string;
+}
 
-import { HolidaysTypes } from 'date-holidays';
+// import { HolidaysTypes } from 'date-holidays';
 
-export type CountryInfo = HolidaysTypes.Country
+// export type CountryInfo = HolidaysTypes.Country
 
 const STORAGE_KEY_BASE = 'location';
 

@@ -4,7 +4,6 @@ import { ReactNode } from 'react';
 interface StepHeaderProps {
   number: number;
   title: ReactNode;
-  description: string;
   colorScheme: 'teal' | 'blue' | 'amber' | 'violet';
   id?: string;
 }
@@ -28,9 +27,8 @@ const colorStyles = {
   },
 } as const;
 
-export function StepHeader({ number, title, description, colorScheme, id }: StepHeaderProps) {
+export function StepHeader({ number, title, colorScheme, id }: StepHeaderProps) {
   const headingId = id || `step-${number}-heading`;
-  const descriptionId = `${headingId}-description`;
 
   return (
     <header className="mb-3">
@@ -54,12 +52,6 @@ export function StepHeader({ number, title, description, colorScheme, id }: Step
         </span>
         {title}
       </h2>
-      <p 
-        id={descriptionId}
-        className="text-xs leading-relaxed text-gray-600 dark:text-gray-300 mt-1"
-      >
-        {description}
-      </p>
     </header>
   );
 } 

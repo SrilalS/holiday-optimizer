@@ -92,31 +92,18 @@ const Footer = () => (
             'text-gray-500 dark:text-gray-400',
           )}>
             <small>&copy; {new Date().getUTCFullYear()} {PROJECT_NAME}. All rights reserved.</small>
-          </p>
-          <nav aria-label="Footer navigation" className="mt-3 sm:mt-0">
+          </p>          <nav aria-label="Footer navigation" className="mt-3 sm:mt-0">
             <ul className="flex items-center gap-4">
               <li>
                 <Link
-                  href="/privacy"
+                  href="/terms-and-privacy"
                   className={cn(
                     linkStyles('ghost'),
                     textSize('tiny'),
                   )}
                   tabIndex={0}
                 >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className={cn(
-                    linkStyles('ghost'),
-                    textSize('tiny'),
-                  )}
-                  tabIndex={0}
-                >
-                  Terms of Service
+                  Terms and Privacy
                 </Link>
               </li>
             </ul>

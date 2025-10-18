@@ -8,7 +8,6 @@ import { DaysInputStep } from './features/form/DaysInputStep';
 import { StrategySelectionStep } from './features/form/StrategySelectionStep';
 import { HolidaysStep } from './features/form/HolidaysStep';
 import { CompanyDaysStep } from './features/form/CompanyDaysStep';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { OptimizationStrategy } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import { TooltipProvider } from './ui/tooltip';
@@ -40,9 +39,6 @@ export function OptimizerForm({ onSubmitAction, isLoading = false }: OptimizerFo
   const daysInputRef = useRef<HTMLFieldSetElement>(null);
   const errorMessageRef = useRef<HTMLDivElement>(null);
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
-
-  // Initialize local storage sync
-  useLocalStorage();
 
   // Check if form is valid - requires both days and country/holidays selection
   const isDaysValid = Boolean(days) && parseInt(days) > 0;

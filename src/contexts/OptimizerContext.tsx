@@ -240,8 +240,11 @@ function optimizerReducer(state: OptimizerState, action: OptimizerAction): Optim
 
     case 'SET_SELECTED_YEAR': {
       return {
-        ...initialState,
-        selectedYear: action.payload
+        ...state,
+        selectedYear: action.payload,
+        holidays: [],
+        selectedDates: [],
+        errors: { ...state.errors, holiday: undefined }
       };
     }
 
